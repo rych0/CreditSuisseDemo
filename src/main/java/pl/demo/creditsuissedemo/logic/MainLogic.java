@@ -3,9 +3,9 @@ package pl.demo.creditsuissedemo.logic;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.demo.creditsuissedemo.Objects.CreditSuisseException;
-import pl.demo.creditsuissedemo.Objects.IntermediateObject;
-import pl.demo.creditsuissedemo.Objects.LogFileRecord;
+import pl.demo.creditsuissedemo.objects.CreditSuisseException;
+import pl.demo.creditsuissedemo.objects.IntermediateObject;
+import pl.demo.creditsuissedemo.objects.LogFileRecord;
 import pl.demo.creditsuissedemo.db.LogValueEntity;
 import pl.demo.creditsuissedemo.db.LogValuesRepository;
 
@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static pl.demo.creditsuissedemo.Objects.StaticCodes.FINISHED_CODE;
-import static pl.demo.creditsuissedemo.Objects.StaticCodes.STARTED_CODE;
+import static pl.demo.creditsuissedemo.objects.StaticCodes.FINISHED_CODE;
+import static pl.demo.creditsuissedemo.objects.StaticCodes.STARTED_CODE;
 
 @Service
 @RequiredArgsConstructor

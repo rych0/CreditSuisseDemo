@@ -1,4 +1,4 @@
-package pl.demo.creditsuissedemo.Objects;
+package pl.demo.creditsuissedemo.objects;
 
 public interface ExceptionCodes {
     String EMPTY_LIST= "Empty file";

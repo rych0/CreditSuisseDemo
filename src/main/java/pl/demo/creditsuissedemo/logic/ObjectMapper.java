@@ -1,12 +1,12 @@
 package pl.demo.creditsuissedemo.logic;
 
 import org.apache.commons.lang3.StringUtils;
-import pl.demo.creditsuissedemo.Objects.IntermediateObject;
-import pl.demo.creditsuissedemo.Objects.LogFileRecord;
+import pl.demo.creditsuissedemo.objects.IntermediateObject;
+import pl.demo.creditsuissedemo.objects.LogFileRecord;
 import pl.demo.creditsuissedemo.db.LogValueEntity;
 
-import static pl.demo.creditsuissedemo.Objects.StaticCodes.FINISHED_CODE;
-import static pl.demo.creditsuissedemo.Objects.StaticCodes.STARTED_CODE;
+import static pl.demo.creditsuissedemo.objects.StaticCodes.FINISHED_CODE;
+import static pl.demo.creditsuissedemo.objects.StaticCodes.STARTED_CODE;
 
 public class ObjectMapper {
 

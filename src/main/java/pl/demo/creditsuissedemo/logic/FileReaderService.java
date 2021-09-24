@@ -6,9 +6,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.demo.creditsuissedemo.Objects.CreditSuisseException;
-import pl.demo.creditsuissedemo.Objects.ExceptionCodes;
-import pl.demo.creditsuissedemo.Objects.LogFileRecord;
+import pl.demo.creditsuissedemo.objects.CreditSuisseException;
+import pl.demo.creditsuissedemo.objects.ExceptionCodes;
+import pl.demo.creditsuissedemo.objects.LogFileRecord;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
