@@ -3,11 +3,11 @@ package pl.demo.creditsuissedemo.logic;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import pl.demo.creditsuissedemo.db.LogValueEntity;
+import pl.demo.creditsuissedemo.db.LogValuesRepository;
 import pl.demo.creditsuissedemo.objects.CreditSuisseException;
 import pl.demo.creditsuissedemo.objects.IntermediateObject;
 import pl.demo.creditsuissedemo.objects.LogFileRecord;
-import pl.demo.creditsuissedemo.db.LogValueEntity;
-import pl.demo.creditsuissedemo.db.LogValuesRepository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,9 +32,10 @@ public class MainLogic {
         } catch (CreditSuisseException cse) {
             log.info(cse.getMessage());
         }
-        List<IntermediateObject> intermediateObjectList = concatenateObjects(listOfRecords);
-        calculateDurationAndWriteToDB(intermediateObjectList);
-
+        if (!listOfRecords.isEmpty()) {
+            List<IntermediateObject> intermediateObjectList = concatenateObjects(listOfRecords);
+            calculateDurationAndWriteToDB(intermediateObjectList);
+        }
     }
 
     private List<IntermediateObject> concatenateObjects(List<LogFileRecord> listOfRecords) {
@@ -54,7 +55,7 @@ public class MainLogic {
         return new ArrayList<>(intermediateObjectMap.values());
     }
 
-    private void calculateDurationAndWriteToDB (List<IntermediateObject> intermediateObjects){
+    private void calculateDurationAndWriteToDB(List<IntermediateObject> intermediateObjects) {
         List<LogValueEntity> listValues = intermediateObjects.parallelStream().map(ObjectMapper::mapIntermediateObjectToEntity).collect(Collectors.toList());
         logValuesRepository.saveAll(listValues);
     }
